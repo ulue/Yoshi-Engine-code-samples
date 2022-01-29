@@ -11,6 +11,7 @@ function createInFront() {
     newCharacter = new Character(100, 100, "your-char");
     // Hides the new character
     newCharacter.visible = false;
+    PlayState.dads.push(newCharacter);
     PlayState.add(newCharacter);
 }
 
