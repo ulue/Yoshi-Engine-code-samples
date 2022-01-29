@@ -4,7 +4,7 @@
 // If it's a Shaggy section, remove Matt from the PlayState.dads array (PlayState.dads.remove(matt))
 
 function createInFront() {
-    // 100 is the default dad height
+    // 100 is the default dad y
     var secondChar = new Character(-100, 100, "your-second-character");
 
     // Adds second char in the dads array making them sing dad's notes.
