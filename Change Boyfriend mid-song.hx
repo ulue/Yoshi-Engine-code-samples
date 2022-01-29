@@ -1,4 +1,5 @@
-// Sample on how to change your character midsong :
+// Sample on how to change your Boyfriend midsong :
+// Doesn't cause any lag stutter and is seamless. You can also have two characters at the same time.
 
 // Old character (first character)
 var oldCharacter:Boyfriend = null;
