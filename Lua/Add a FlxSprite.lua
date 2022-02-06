@@ -14,7 +14,7 @@ function create()
     -- If you wanna load a simple bitmap
     createClass("YourSprite", "FlxSprite", {0, 0}) -- Replace 0, 0 by the sprite's position
 
-    call("Paths.image", "Bitmap", {"path/to/bitmap"}) -- Replace "path/to/sparrow" by your sparrow path. For example, "stage1/bgPeople" for "images/stage1/bgPeople.png"
-    call("YourSprite.loadGraphic", nil, {v("Bitmap")}) -- Loads the bitmap
+    call("Paths.image", "Bitmap", {"path/to/bitmap"}) -- Replace "path/to/image" by your bitmap path. For example, "stage1/bgPeople" for "images/stage1/bgPeople.png"
+    call("YourSprite.loadGraphic", nil, {v("Bitmap")}) -- Loads the bitmap in the FlxSprite
     call("PlayState.add", {v("YourSprite")}) -- Adds the sprite to the PlayState
 end
