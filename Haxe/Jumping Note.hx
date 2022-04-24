@@ -43,6 +43,11 @@ function createPost() {
 }
 
 function update(elapsed:Float) {
+    PlayState.notes.members.sort(function(a, b) {
+        if (a.strumTime < b.strumTime) return -1;
+        else if (a.strumTime > b.strumTime) return 1;
+        else return 0;
+    });
     // PlayState.camHUD.zoom = 0.2;
     if (PlayState.notes.members.length <= 0) {
         jumpingNote.visible = false;
