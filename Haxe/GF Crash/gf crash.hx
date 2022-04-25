@@ -4,6 +4,7 @@
 // dont forget to move the "boom.ogg" in your "sounds" folder and the "boom.frag" in your "shaders" folder.
 
 import("openfl.filters.ShaderFilter");
+import("flixel.math.FlxRect");
 
 var boomTime:Float = -5000;
 var boomActive = false;
@@ -15,6 +16,7 @@ var audioPlayed:Bool = false;
 var audio:FlxSound;
 
 var shaders:Array<CustomShader> = [];
+
 
 function create() {
     audio = new FlxSound().loadEmbedded(Paths.sound('boom'));
@@ -41,7 +43,7 @@ function onDadHit(note:Note) {
     }
     else {
         boomDirectionX = 0;
-        boomDirectionY = 0;
+        boomDirectionY = 1;
     };
     boomActive = true;
 }
@@ -53,6 +55,8 @@ function update(elapsed:Float) {
         if (Conductor.songPosition < boomTime + Conductor.crochet) {
             PlayState.dad.x = 400 + FlxMath.lerp(boomDefaultX, 2000 * boomDirectionX, FlxEase.quartIn((Conductor.songPosition - boomTime) / Conductor.crochet));
             PlayState.dad.y = 130 + FlxMath.lerp(boomDefaultY, 2000 * boomDirectionY, FlxEase.quartIn((Conductor.songPosition - boomTime) / Conductor.crochet));
+            
+            PlayState.dad.clipRect = new FlxRect(0, 0, PlayState.dad.width * 2, (130 + PlayState.dad.height) - PlayState.dad.y);
         } else if (Conductor.songPosition < boomTime + (Conductor.crochet * 2)) {
             if (!audioPlayed) {
                 PlayState.camHUD.zoom *= 1.33;
