@@ -21,13 +21,6 @@ function create() {
     note.updateHitbox();
     note.antialiasing = true;
     
-    note.animation.play("scroll");
-    if (note.isSustainNote) {
-        if (note.prevNote != null)
-            if (note.prevNote.animation.curAnim.name == "holdend")
-                note.prevNote.animation.play("holdpiece");
-        note.animation.play("holdend");
-    }
     note.colored = false;
     note.splashColor = 0xFF880000;
 }
